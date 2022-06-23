@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'drf_yasg',
     'dj_rest_auth',
     'rest_framework.authtoken',
+    # myapps
     'users',
+    'flight',
 ]
 
 MIDDLEWARE = [
@@ -117,4 +119,8 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
     ]
+}
+
+REST_AUTH_SERIALIZERS = {
+    'TOKEN_SERIALIZER' : 'users.serializers.CustomTokenSerializer',
 }
